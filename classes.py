@@ -59,4 +59,4 @@ class Cider():
             self.flavour[fruit.flavour] += 1
 
     def __repr__(self):
-        return f"A barrel of {max(self.flavour, key = lambda key: self.flavour[key]} cider"
+        return f"A barrel of {max(self.flavour, key = lambda key: self.flavour[key])} cider"
