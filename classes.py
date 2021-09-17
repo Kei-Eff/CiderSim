@@ -1,14 +1,44 @@
+import random
+
 ##### Fruit Classes #####
 
 class Fruit():
-    pass
+    def __init__(self):
+        self.flavour, self.colour = random.choice(self.varieties)
+
+class Apple(Fruit):
+    varieties = [("sour", "green"), ("sweet", "red")]
+
+class Pear(Fruit):
+    varieties = [("mellow", "yellow"), ("sharp", "green")]
+
 
 ##### Tree Classes #####
 
 class  Tree():
-    pass
+    def __init__(self):
+        self.fruits = []
+
+class AppleTree(Tree):
+    fecundity = 8
+    fruit_type = Apple
+
+class PearTree(Tree):
+    fecundity = 5
+    fruit_type = Pear
+
+
 
 ##### Cider Classes #####
 
 class Cider():
-    pass
+    def __init__(self, fruitlist):
+        self.flavour = {
+            "sweet": 0,
+            "sour": 0,
+            "mellow": 0,
+            "sharp": 0
+        }
+
+        for fruit in fruitlist:
+            self.flavour[fruit.flavour] += 1
